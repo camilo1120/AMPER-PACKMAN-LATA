@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>AMPER EN ACCIÓN – ACTIVA LA ENERGÍA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════════ SCREEN 1: SPLASH ═══════════════════════════ -->
+<div id="screen-splash" class="screen active">
+  <div class="scanlines"></div>
+  <div class="energy-particles" id="particles"></div>
+  <div class="splash-content">
+    <div class="logo-container">
+      <div class="logo-glow"></div>
+      <div class="logo-text">
+        <span class="logo-amp">AMP</span><span class="logo-er">ER</span>
+      </div>
+      <div class="logo-sub">EN ACCIÓN</div>
+    </div>
+    <div class="tagline">
+      <span class="tagline-text">ACTIVA LA ENERGÍA</span>
+      <div class="tagline-line"></div>
+    </div>
+    <div class="can-animation">
+      <div class="can">
+        <div class="can-body">
+          <div class="can-label">AMPER</div>
+          <div class="can-bolt">⚡</div>
+        </div>
+        <div class="can-top"></div>
+        <div class="can-bottom"></div>
+      </div>
+      <div class="can-glow-ring"></div>
+    </div>
+    <button class="btn-primary" id="btn-start">
+      <span class="btn-text">INICIAR</span>
+      <div class="btn-glow"></div>
+    </button>
+    <div class="insert-coin">▶ PRESIONA PARA COMENZAR ◀</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SCREEN 2: REGISTER ═══════════════════════════ -->
+<div id="screen-register" class="screen">
+  <div class="scanlines"></div>
+  <div class="register-content">
+    <div class="section-header">
+      <div class="header-accent"></div>
+      <h2 class="section-title">REGISTRO</h2>
+      <div class="header-accent"></div>
+    </div>
+    <div class="slogan-mini">Demuestra tu nivel. Activa tu AMPER.</div>
+    <form id="register-form" class="register-form" autocomplete="off">
+      <div class="form-group">
+        <label class="form-label">CÓDIGO ESTUDIANTIL</label>
+        <input type="text" id="studentCode" class="form-input" placeholder="Ej: 2024001234" maxlength="15" required />
+        <div class="input-line"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">CARRERA</label>
+        <select id="career" class="form-input form-select" required>
+          <option value="">-- SELECCIONA --</option>
+          <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
+          <option value="Ingeniería Industrial">Ingeniería Industrial</option>
+          <option value="Ingeniería Electrónica">Ingeniería Electrónica</option>
+          <option value="Administración de Empresas">Administración de Empresas</option>
+          <option value="Medicina">Medicina</option>
+          <option value="Derecho">Derecho</option>
+          <option value="Psicología">Psicología</option>
+          <option value="Arquitectura">Arquitectura</option>
+          <option value="Contaduría Pública">Contaduría Pública</option>
+          <option value="Comunicación Social">Comunicación Social</option>
+          <option value="Otra">Otra</option>
+        </select>
+        <div class="input-line"></div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">SEMESTRE</label>
+        <div class="semester-grid">
+          <label class="sem-option" data-sem="1">1°</label>
+          <label class="sem-option" data-sem="2">2°</label>
+          <label class="sem-option" data-sem="3">3°</label>
+          <label class="sem-option" data-sem="4">4°</label>
+          <label class="sem-option" data-sem="5">5°</label>
+          <label class="sem-option" data-sem="6">6°</label>
+          <label class="sem-option" data-sem="7">7°</label>
+          <label class="sem-option" data-sem="8">8°</label>
+          <label class="sem-option" data-sem="9">9°</label>
+          <label class="sem-option" data-sem="10">10°</label>
+        </div>
+        <input type="hidden" id="semester" required />
+        <div class="input-line"></div>
+      </div>
+      <div id="register-error" class="error-msg"></div>
+      <button type="submit" class="btn-primary" id="btn-register">
+        <span class="btn-text">ACTIVAR JUEGO ⚡</span>
+        <div class="btn-glow"></div>
+      </button>
+    </form>
+    <button class="btn-back" id="btn-back-register">← VOLVER</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SCREEN 3: INSTRUCTIONS ═══════════════════════════ -->
+<div id="screen-instructions" class="screen">
+  <div class="scanlines"></div>
+  <div class="inst-content">
+    <div class="section-header">
+      <div class="header-accent"></div>
+      <h2 class="section-title">MISIÓN</h2>
+      <div class="header-accent"></div>
+    </div>
+    <div class="mission-grid">
+      <div class="mission-item">
+        <div class="mission-icon">🟡</div>
+        <div class="mission-text">Come los <strong>PARCIALES</strong> del laberinto</div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-icon">🥤</div>
+        <div class="mission-text">Atrapa la <strong>LATA AMPER</strong> para activar el reto</div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-icon">👻</div>
+        <div class="mission-text">Evita el <strong>ESTRÉS, SUEÑO, REDES</strong> y <strong>DISTRACCIONES</strong></div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-icon">🧠</div>
+        <div class="mission-text">Responde el <strong>RETO ACADÉMICO</strong> para ganar tu lata real</div>
+      </div>
+    </div>
+    <div class="controls-section">
+      <div class="controls-title">CONTROLES</div>
+      <div class="controls-grid">
+        <div class="ctrl">⬆ Arriba</div>
+        <div class="ctrl">⬇ Abajo</div>
+        <div class="ctrl">⬅ Izquierda</div>
+        <div class="ctrl">➡ Derecha</div>
+      </div>
+    </div>
+    <button class="btn-primary" id="btn-play">
+      <span class="btn-text">⚡ JUGAR ⚡</span>
+      <div class="btn-glow"></div>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SCREEN 4: GAME ═══════════════════════════ -->
+<div id="screen-game" class="screen">
+  <div class="game-hud">
+    <div class="hud-left">
+      <div class="hud-label">SCORE</div>
+      <div class="hud-value" id="hud-score">0</div>
+    </div>
+    <div class="hud-center">
+      <div class="hud-logo">⚡AMPER⚡</div>
+      <div class="lives-container" id="lives-display">
+        <span class="life-icon">●</span>
+        <span class="life-icon">●</span>
+        <span class="life-icon">●</span>
+      </div>
+    </div>
+    <div class="hud-right">
+      <div class="hud-label">TIEMPO</div>
+      <div class="hud-value" id="hud-timer">90</div>
+    </div>
+  </div>
+  <div class="game-wrapper">
+    <canvas id="gameCanvas"></canvas>
+    <div id="game-overlay" class="game-overlay hidden">
+      <div class="overlay-content">
+        <div id="overlay-title" class="overlay-title"></div>
+        <div id="overlay-msg" class="overlay-msg"></div>
+        <button class="btn-primary" id="btn-overlay-action">
+          <span class="btn-text" id="overlay-btn-text">CONTINUAR</span>
+          <div class="btn-glow"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SCREEN 5: CHALLENGE ═══════════════════════════ -->
+<div id="screen-challenge" class="screen">
+  <div class="scanlines"></div>
+  <div class="challenge-content">
+    <div class="challenge-header">
+      <div class="challenge-badge">⚡ RETO ACADÉMICO ⚡</div>
+      <div class="challenge-subtitle">Demuestra tu nivel. Activa tu AMPER.</div>
+    </div>
+    <div class="question-container">
+      <div class="question-meta" id="q-meta"></div>
+      <div class="question-text" id="question-text"></div>
+      <div class="options-grid" id="options-grid"></div>
+    </div>
+    <div class="challenge-timer-bar">
+      <div class="timer-fill" id="challenge-timer-fill"></div>
+    </div>
+    <div id="challenge-feedback" class="challenge-feedback hidden"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SCREEN 6: WINNER ═══════════════════════════ -->
+<div id="screen-winner" class="screen">
+  <div class="scanlines"></div>
+  <div class="winner-content">
+    <div class="winner-particles" id="winner-particles"></div>
+    <div class="winner-title">¡GANASTE!</div>
+    <div class="winner-slogan">Demuestra tu nivel.<br>Activa tu AMPER.</div>
+    <div class="winner-can-wrapper">
+      <div class="winner-can">
+        <div class="can-body">
+          <div class="can-label">AMPER</div>
+          <div class="can-bolt">⚡</div>
+        </div>
+        <div class="can-top"></div>
+        <div class="can-bottom"></div>
+      </div>
+      <div class="winner-rays"></div>
+    </div>
+    <div class="winner-msg">¡Tu lata está siendo dispensada!</div>
+    <div class="winner-score-display" id="winner-score"></div>
+    <button class="btn-primary" id="btn-winner-done">
+      <span class="btn-text">FINALIZAR</span>
+      <div class="btn-glow"></div>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ SCREEN 7: LOSER ═══════════════════════════ -->
+<div id="screen-loser" class="screen">
+  <div class="scanlines"></div>
+  <div class="loser-content">
+    <div class="loser-icon">⚡</div>
+    <div class="loser-title">¡CASI!</div>
+    <div class="loser-msg" id="loser-msg">Estudia un poco más y vuelve a intentarlo.</div>
+    <div class="loser-score" id="loser-score"></div>
+    <div class="motivation-text">El conocimiento es tu superpoder.</div>
+    <button class="btn-primary" id="btn-loser-retry">
+      <span class="btn-text">VOLVER A INICIO</span>
+      <div class="btn-glow"></div>
+    </button>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
